@@ -1,0 +1,7 @@
+{
+  "name": "yendoAppMU",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
