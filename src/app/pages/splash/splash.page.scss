@@ -1,0 +1,28 @@
+ion-content {
+    overflow-y: hidden;
+}
+
+.header_logo {
+    content: '';
+    height: 70vh;
+    background-color: #FEFEFE;
+    /* background-image: url('../../../assets/splash/trendy-neumorphism-style-interface-background_191234-1039.jpg'); */
+    border-radius: 0 0 2em 2em;
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.login_button {
+    width: 80%;
+    margin-top: 5em;
+    a {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+    }
+}
