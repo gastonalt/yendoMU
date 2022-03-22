@@ -9,6 +9,16 @@
             <ion-title size="large">Novedades</ion-title>
         </ion-toolbar>
     </ion-header>
+    <div class="card-list">
+        <!-- BOLICHE OK -->
+        <div class="app-card">
+            <app-card (click)="presentAlert()" [title]="bolicheYendo.title" [descripcion]="bolicheYendo.descripcion" [backgroundUrl]="bolicheYendo.backgroundUrl" [ballColor]="bolicheYendo.ballColor"></app-card>
+        </div>
+        <!-- BOLICHES PLACEHOLDER -->
+        <div *ngFor="let card of cards" class="app-card">
+            <app-card (click)="presentAlert()" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+        </div>
+    </div>
 
-    <app-explore-container name="Tab 1 page"></app-explore-container>
+    <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>

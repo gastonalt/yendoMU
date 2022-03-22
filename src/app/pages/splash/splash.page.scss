@@ -6,10 +6,16 @@ ion-content {
     content: '';
     height: 70vh;
     background-color: #FEFEFE;
-    /* background-image: url('../../../assets/splash/trendy-neumorphism-style-interface-background_191234-1039.jpg'); */
+    background-image: url('../../../assets/splash/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.webp');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 110%;
     border-radius: 0 0 2em 2em;
-    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section {
