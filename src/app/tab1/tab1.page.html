@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
-        <app-header-component></app-header-component>
-    </ion-toolbar>
+  <ion-toolbar>
+      <app-header-component></app-header-component>
+  </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
@@ -12,7 +12,7 @@
     <div class="card-list">
         <!-- BOLICHE OK -->
         <div class="app-card">
-            <app-card (click)="presentAlert()" [title]="bolicheYendo.title" [descripcion]="bolicheYendo.descripcion" [backgroundUrl]="bolicheYendo.backgroundUrl" [ballColor]="bolicheYendo.ballColor"></app-card>
+            <app-card (click)="navigate(bolicheYendo)" [title]="bolicheYendo.title" [descripcion]="bolicheYendo.descripcion" [backgroundUrl]="bolicheYendo.backgroundUrl" [ballColor]="bolicheYendo.ballColor"></app-card>
         </div>
         <!-- BOLICHES PLACEHOLDER -->
         <div *ngFor="let card of cards" class="app-card">

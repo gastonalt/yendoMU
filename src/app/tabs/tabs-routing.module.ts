@@ -23,6 +23,10 @@ const routes: Routes = [
         path: 'tab4',
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
+/*       {
+        path: 'evento',
+        loadChildren: () => import('../pages/evento/evento.module').then( m => m.EventoPageModule)
+      }, */
       {
         path: '',
         redirectTo: 't/tab1',

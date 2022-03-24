@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -26,9 +27,10 @@ export class Tab1Page implements OnInit{
     backgroundUrl: 'https://media.istockphoto.com/photos/people-enjoying-house-party-picture-id936276840?k=20&m=936276840&s=170667a&w=0&h=67_-ZC6VHkYUiuGJ7NPrMuWIjdJ_EWr8IoKmghYbF4Y=',
     ballColor: '#FAD566'
   }
-  ]
+  ];
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController,
+              private router: Router) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -43,10 +45,19 @@ export class Tab1Page implements OnInit{
     const { role } = await alert.onDidDismiss();
   }
 
+  navigate(bolicheYendo: any){
+    this.router.navigate(['/evento'], {
+      replaceUrl: true,
+      state: {
+        bolicheYendo
+      }
+    });
+  }
+
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log(this.cards)
+    console.log(this.cards);
   }
 
 }

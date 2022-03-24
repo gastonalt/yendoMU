@@ -17,7 +17,7 @@ import { CardComponent } from '../components/card/card.component';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
   ],
-  declarations: [Tab1Page, HeaderComponentComponent, CardComponent],
+  declarations: [Tab1Page, CardComponent, HeaderComponentComponent],
   exports: []
 })
 export class Tab1PageModule {}

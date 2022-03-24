@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponentComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

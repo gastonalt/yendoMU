@@ -29,7 +29,7 @@ export class SplashPage implements OnInit {
   }
 
   navigate(){
-    this.router.navigate(['/f'], {replaceUrl: true})
+    this.router.navigate(['/f'], {replaceUrl: true});
   }
 
 }
