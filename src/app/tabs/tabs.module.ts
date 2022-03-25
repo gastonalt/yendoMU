@@ -15,6 +15,6 @@ import { HeaderComponentComponent } from '../header-component/header-component.c
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage, HeaderComponentComponent]
+  declarations: [TabsPage]
 })
 export class TabsPageModule {}

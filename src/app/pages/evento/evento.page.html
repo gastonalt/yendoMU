@@ -1,14 +1,32 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large" style="padding-left: 1em;"> {{bolicheYendo.title}}</ion-title>
-        <ion-buttons slot="start">
-          <ion-back-button text="" defaultHref="f/t/tab1"></ion-back-button>
-        </ion-buttons>
-      </ion-toolbar>
-  </ion-header>
-  <div class="card-list">
-  </div>
+    <section class="top-section" [ngStyle]="{'background-image': 'url(' + bolicheYendo.backgroundUrl + ')'}">
+        <div class="parent">
+            <div class="div1">
+                <ion-buttons slot="start">
+                    <ion-back-button text="" defaultHref="f/t/tab1" style="margin: 1em; z-index: 100;"></ion-back-button>
+                    <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
+                </ion-buttons>
+            </div>
+            <div class="div2">
+                <div class="title">
+                    <ion-title size="large">
+                        {{bolicheYendo.title}}
+                        <span class="ball" [ngStyle]="{'color': bolicheYendo.ballColor }">⬤</span>
+                    </ion-title>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-section">
+        <h3 class="descripcion">
+            {{bolicheYendo.descripcion}}
+        </h3>
+        <div class="reserva_button">
+            <ion-button expand="block">
+                Reservar
+            </ion-button>
+        </div>
+    </section>
 
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+    <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
