@@ -1,0 +1,11 @@
+<div class="avatar-container">
+  <div class="flex-profile-pic-container">
+    <div class="profile-pic" [ngStyle]="{'background-image': 'url(' + user.ppic + ')'}">
+      <div class="edit-button" (click)="editarPerfil()">
+        <ion-icon name="brush-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <h1>{{user.nombre}}</h1>
+  <h5 class="username">@{{user.username}}</h5>
+</div>

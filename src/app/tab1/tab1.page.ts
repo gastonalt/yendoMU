@@ -61,9 +61,6 @@ export class Tab1Page implements OnInit{
   }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(this.cards);
   }
 
 }

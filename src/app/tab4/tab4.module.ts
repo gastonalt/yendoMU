@@ -10,6 +10,8 @@ import { Tab4Page } from './tab4.page';
 import { RouterModule } from '@angular/router';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { HeaderComponentComponent } from '../header-component/header-component.component';
+import { AvatarComponent } from '../components/avatar/avatar.component';
+import { CardComponent } from '../components/card/card.component';
 
 @NgModule({
   imports: [
@@ -20,6 +22,6 @@ import { HeaderComponentComponent } from '../header-component/header-component.c
     RouterModule.forChild([{ path: '', component: Tab4Page }]),
     Tab4PageRoutingModule,
   ],
-  declarations: [Tab4Page, HeaderComponentComponent]
+  declarations: [Tab4Page,CardComponent, HeaderComponentComponent, AvatarComponent]
 })
 export class Tab4PageModule {}
