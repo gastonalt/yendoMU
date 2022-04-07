@@ -1,37 +1,52 @@
 .card-body {
-  // border: 1px solid black;
-  display: flex;
-  align-items: flex-end;
-  width: 100%;
-  height: 18em;
-  border-radius: 1em;
-  -webkit-box-shadow: inset 0px -14px 26px 7px #000000;
-  box-shadow: inset 0px -14px 26px 7px #000000;
-  /* background-image: url(https://media.istockphoto.com/photos/dancing-friends-picture-id501387734?k=20&m=501387734&s=612x612&w=0&h=1mli5b7kpDg428fFZfsDPJ9dyVHsWsGK-EVYZUGWHpI=); */
+    // border: 1px solid black;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 18em;
+    border-radius: 1em;
+    -webkit-box-shadow: inset 0px -14px 26px 7px #000000;
+    box-shadow: inset 0px -14px 26px 7px #000000;
 }
 
 .card-text {
-  padding: 0 1em;
-  h1 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    line-height: 0.9;
-    text-transform: uppercase;
-    font-weight: 800;
+    h1 {
+        width: 100%;
+        line-height: 0.9;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: .7em;
+        color: #fff;
+        text-shadow: 0px 0px 10px #000;
+    }
+    p {
+        padding: 0 1em;
+        color: #fff;
+        text-shadow: 0px 0px 10px #000;
+        margin-top: 2px;
+    }
+}
+
+.icon {
+    display: inline-block;
     font-size: 2em;
-    color: #fff;
-    text-shadow: 0px 0px 10px #000;
-    margin: 0;
-    z-index: 99;
-  }
-  p {
-    color: #fff;
-    text-shadow: 0px 0px 10px #000;
-    margin-top: 2px;
-  }
+    vertical-align: middle;
+}
+
+ion-item {
+    --background: transparent !important;
+    border: 0px;
+     :host {
+        --inner-border-width: 0px 0px 0px 0px;
+    }
+}
+
+.text {
+    color: white;
+    font-size: 2em;
+    display: inline-block;
 }
 
 .ball {
-  font-size: 0.7em;
+    font-size: 0.7em;
 }

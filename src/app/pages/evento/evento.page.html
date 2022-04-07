@@ -9,22 +9,29 @@
             </div>
             <div class="div2">
                 <div class="title">
-                    <ion-title size="large">
-                        {{bolicheYendo.title}}
-                        <span class="ball" [ngStyle]="{'color': bolicheYendo.ballColor }">⬤</span>
-                    </ion-title>
+                    <ion-item lines="none" style="background-color: transparent !important;">
+                        <span class="text">{{bolicheYendo.title}}</span>
+                        <ion-icon class="icon" name="ellipse" [ngStyle]="{'color': bolicheYendo.ballColor }"></ion-icon>
+                    </ion-item>
                 </div>
             </div>
         </div>
     </section>
     <section class="bottom-section">
+        <h2><b>{{bolicheYendo.fecha}}</b>
+            <ion-icon name="sunny-outline" *ngIf="bolicheYendo.time < 21"></ion-icon>
+            <ion-icon name="moon-outline" *ngIf="bolicheYendo.time >= 21"></ion-icon>
+        </h2>
         <h3 class="descripcion">
             {{bolicheYendo.descripcion}}
         </h3>
         <div class="reserva_button">
-            <ion-button expand="block">
+            <ion-button *ngIf="!reservado" expand="block" (click)="reservar()">
                 Reservar
             </ion-button>
+            <div *ngIf="reservado" style="display: flex; align-items: center; justify-content: center;">
+                Reservado el {{fecha | date:'dd/MM/yyyy'}}.
+            </div>
         </div>
     </section>
 

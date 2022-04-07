@@ -25,6 +25,23 @@
     // border: 1px solid red;
 }
 
+.icon {
+    display: inline-block;
+    font-size: 35px;
+    vertical-align: middle;
+}
+
+ion-item {
+    --background: transparent !important;
+}
+
+.text {
+    color: white;
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .title {
     // border: 1px solid red;
     height: 100%;

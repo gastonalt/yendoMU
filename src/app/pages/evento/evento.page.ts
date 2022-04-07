@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
 export class EventoPage implements OnInit {
 
   bolicheYendo: any;
+  reservado: boolean = false;
+  fecha = new Date();
 
   constructor(private router: Router) { }
 
   goBack(){
     this.router.navigate(['f/t/tab1']);
+  }
+
+  reservar(){
+    this.reservado = true;
   }
 
   ngOnInit() {

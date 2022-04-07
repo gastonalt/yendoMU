@@ -1,0 +1,101 @@
+.container {
+    padding: 0 .5em;
+    margin-bottom: -.3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "viernes viernes sabados sabados" "viernes viernes sabados sabados" "logo1 logo2 logo3 logo4";
+}
+
+img {
+    height: 4em;
+    object-fit: cover;
+    border-radius: 1em;
+    -webkit-box-shadow: inset 0px -14px 26px 7px #000000;
+    box-shadow: inset 0px -14px 26px 7px #000000;
+}
+
+.viernes {
+    grid-area: viernes;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: .5em;
+    color: white;
+    font-size: 1.5em;
+    justify-content: center;
+    background-color: pink;
+    border-radius: 1em;
+    background-image: url('https://st.depositphotos.com/1002111/2556/i/950/depositphotos_25565783-stock-photo-young-party-people.jpg');
+    background-size: cover;
+    text-shadow: 0px 0px 10px #000;
+    font-weight: 800;
+}
+
+.sabados {
+    grid-area: sabados;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: .5em;
+    color: white;
+    font-size: 1.5em;
+    justify-content: center;
+    background-color: pink;
+    border-radius: 1em;
+    background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/21/40/d8/c2/fiesta-party-hostel-cancun.jpg');
+    background-size: cover;
+    text-shadow: 0px 0px 10px #000;
+    font-weight: 800;
+}
+
+.dentroRos {
+    margin-top: 0em;
+    background-image: url('https://tripin.travel/wp-content/uploads/2017/01/rosario-scaled.jpg');
+    background-size: cover;
+    height: 6em;
+    color: white;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    font-weight: 800;
+    display: flex;
+    align-items: flex-end;
+    padding: .5em 0;
+    justify-content: center;
+    margin: .2em .3em;
+    border-radius: .7em;
+    background-position: 0%;
+}
+
+.alredeRos {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzWIoTYA1YqfbNx8I8pdrvTK67QtPHSpwjPg&usqp=CAU');
+    background-size: cover;
+    height: 6em;
+    color: white;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    font-weight: 800;
+    display: flex;
+    align-items: flex-end;
+    padding: .5em 0;
+    justify-content: center;
+    margin: .2em .3em;
+    border-radius: .7em;
+    background-position: 0%;
+}
+
+.logo1 {
+    grid-area: logo1;
+}
+
+.logo2 {
+    grid-area: logo2;
+}
+
+.logo3 {
+    grid-area: logo3;
+}
+
+.logo4 {
+    grid-area: logo4;
+}

@@ -16,7 +16,7 @@
         </div>
         <!-- BOLICHES PLACEHOLDER -->
         <div *ngFor="let card of cards" class="app-card">
-            <app-card (click)="presentAlert()" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+            <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
         </div>
     </div>
 
