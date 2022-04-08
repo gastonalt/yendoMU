@@ -16,6 +16,10 @@ const routes: Routes = [
   },  {
     path: 'editar-perfil',
     loadChildren: () => import('./pages/editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },
+  {
+    path: 'reservas-activas',
+    loadChildren: () => import('./pages/reservas-activas/reservas-activas.module').then( m => m.ReservasActivasPageModule)
   }
 
 

@@ -26,10 +26,13 @@
             {{bolicheYendo.descripcion}}
         </h3>
         <div class="reserva_button">
-            <ion-button *ngIf="!reservado" expand="block" (click)="reservar()">
+            <ion-button *ngIf="reservadoView" color="danger" expand="block" (click)="reservar()">
+                Cancelar
+            </ion-button>
+            <ion-button *ngIf="!reservado && !reservadoView" expand="block" (click)="reservar()">
                 Reservar
             </ion-button>
-            <div *ngIf="reservado" style="display: flex; align-items: center; justify-content: center;">
+            <div *ngIf="reservado || reservadoView" style="display: flex; align-items: center; justify-content: center;">
                 Reservado el {{fecha | date:'dd/MM/yyyy'}}.
             </div>
         </div>

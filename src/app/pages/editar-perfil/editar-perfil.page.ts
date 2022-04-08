@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilPage implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.user = this.router.getCurrentNavigation().extras?.state.user;
+  }
+
+  guardar(){
+    this.router.navigate(['f/t/tab4']);
   }
 
 }

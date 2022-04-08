@@ -13,16 +13,16 @@
 
     <app-avatar [user]="user" style="margin: 2em;"></app-avatar>
 
-    <div class="reservas-activas" style="margin-top: 1em;">
-      <div class="reservas-activas-card">
-        <h1>Reservas Activas</h1>
-      </div>
+    <div class="reservas-activas" style="margin-top: 1em;" (click)="navigateReservasActivas()">
+        <div class="reservas-activas-card">
+            <h1>Reservas Activas</h1>
+        </div>
     </div>
 
     <div class="boton-editar">
-      <ion-button (click)="editarPerfil()">
-        Editar
-      </ion-button>
+        <ion-button (click)="editarPerfil()">
+            Editar
+        </ion-button>
     </div>
 
 </ion-content>

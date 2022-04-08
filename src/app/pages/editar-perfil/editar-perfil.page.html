@@ -1,9 +1,34 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>editar-perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+    <div class="parent">
+        <div class="div1">
+            <ion-buttons slot="start">
+                <ion-back-button text="" defaultHref="f/t/tab4" style="margin: 1em; z-index: 100;"></ion-back-button>
+                <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
+            </ion-buttons>
+        </div>
+    </div>
 
-<ion-content>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Editar perfil</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
+    <section>
+        <ion-item lines="none">
+            <ion-label position="stacked">Nombre completo</ion-label>
+            <ion-input [placeholder]="user.nombre"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label position="stacked">Nombre de usuario</ion-label>
+            <ion-input [placeholder]="user.username"></ion-input>
+        </ion-item>
+
+        <div class="boton-editar">
+            <ion-button (click)="guardar()">
+                Editar
+            </ion-button>
+        </div>
+
+    </section>
 </ion-content>

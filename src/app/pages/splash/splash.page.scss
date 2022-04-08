@@ -18,6 +18,15 @@ ion-content {
     justify-content: center;
 }
 
+ion-button {
+    --background: yellow;
+    --color: black;
+    font-size: 1em;
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+}
+
 section {
     display: flex;
     justify-content: center;

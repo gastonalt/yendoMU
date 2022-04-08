@@ -16,6 +16,10 @@ export class Tab4Page implements OnInit {
 
   constructor(private router: Router) { }
 
+  navigateReservasActivas(){
+    this.router.navigate(['/reservas-activas'])
+  }
+
   editarPerfil(){
     this.router.navigate(['/editar-perfil'], {
       replaceUrl: true,

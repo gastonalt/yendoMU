@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class EventoPage implements OnInit {
 
   bolicheYendo: any;
+  reservadoView = false;
   reservado: boolean = false;
   fecha = new Date();
 
@@ -24,6 +25,9 @@ export class EventoPage implements OnInit {
 
   ngOnInit() {
     this.bolicheYendo = this.router.getCurrentNavigation().extras?.state.bolicheYendo;
+    if(this.router.getCurrentNavigation().extras?.state.reservado){
+      this.reservadoView = true;
+    }
   }
 
 }

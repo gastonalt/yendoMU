@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-avatar',
@@ -10,15 +11,19 @@ export class AvatarComponent implements OnInit {
 
   @Input() user;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
-  editarPerfil(){
-    this.router.navigate(['/editar-perfil'], {
-      replaceUrl: true,
-      state: {
-        user: this.user
-      }
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Atención!',
+      message: 'Aún no está disponible esta función.',
+      buttons: ['OK']
     });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
   }
 
   ngOnInit() {}
