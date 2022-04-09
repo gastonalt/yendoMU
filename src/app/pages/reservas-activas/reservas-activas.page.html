@@ -9,11 +9,14 @@
         </div>
     </div>
 
-    <div class="card-list">
+    <div class="card-list" *ngIf="cards.length > 0">
         <!-- BOLICHE OK -->
-        <div class="app-card">
-            <app-card (click)="navigate(bolicheYendo)" [title]="bolicheYendo.title" [descripcion]="bolicheYendo.descripcion" [backgroundUrl]="bolicheYendo.backgroundUrl" [ballColor]="bolicheYendo.ballColor"></app-card>
+        <div *ngFor="let card of cards" class="app-card">
+            <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="'transparent'"></app-card>
         </div>
+    </div>
+    <div *ngIf="cards.length==0" style="height: 80vh; display: flex; align-items: center; justify-content: center;">
+        No hay reservas activas.
     </div>
 
 </ion-content>

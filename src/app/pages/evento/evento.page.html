@@ -26,7 +26,7 @@
             {{bolicheYendo.descripcion}}
         </h3>
         <div class="reserva_button">
-            <ion-button *ngIf="reservadoView" color="danger" expand="block" (click)="reservar()">
+            <ion-button *ngIf="reservadoView" color="danger" expand="block" (click)="cancelar()">
                 Cancelar
             </ion-button>
             <ion-button *ngIf="!reservado && !reservadoView" expand="block" (click)="reservar()">

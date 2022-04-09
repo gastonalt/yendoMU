@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab1',
@@ -9,15 +10,15 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab1Page implements OnInit{
 
-  bolicheYendo = {
-    title: 'Boliche Yendo',
-    descripcion: 'Este es el único boliche donde se puede reservar en esta prueba :) Lo encontraste!',
-    backgroundUrl: 'https://i0.wp.com/elpilon.com.co/wp-content/uploads/2018/04/party-wallpape.jpg?fit=800%2C500&ssl=1',
-    ballColor: '#5FB8A1',
-    fecha: '11/04/22',
-    time: 21,
-  }
   cards= [
+    {
+      title: 'Boliche Yendo',
+      descripcion: 'Este es el único boliche donde se puede reservar en esta prueba :) Lo encontraste!',
+      backgroundUrl: 'https://i0.wp.com/elpilon.com.co/wp-content/uploads/2018/04/party-wallpape.jpg?fit=800%2C500&ssl=1',
+      ballColor: '#5FB8A1',
+      fecha: '11/04/22',
+      time: 21,
+    },
   {
     title: 'La fiesta de la Cerveza',
     descripcion: 'Te invitamos a compartir una de las mejores fiestas en esta increible ocacion con invitados de lujo!!!',
@@ -36,7 +37,8 @@ export class Tab1Page implements OnInit{
   ];
 
   constructor(public alertController: AlertController,
-              private router: Router) {}
+              private router: Router,
+              private storage: Storage) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -60,7 +62,6 @@ export class Tab1Page implements OnInit{
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {};
 
 }

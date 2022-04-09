@@ -10,11 +10,6 @@
         </ion-toolbar>
     </ion-header>
     <div class="card-list">
-        <!-- BOLICHE OK -->
-        <div class="app-card">
-            <app-card (click)="navigate(bolicheYendo)" [title]="bolicheYendo.title" [descripcion]="bolicheYendo.descripcion" [backgroundUrl]="bolicheYendo.backgroundUrl" [ballColor]="bolicheYendo.ballColor"></app-card>
-        </div>
-        <!-- BOLICHES PLACEHOLDER -->
         <div *ngFor="let card of cards" class="app-card">
             <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
         </div>
