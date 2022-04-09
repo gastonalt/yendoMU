@@ -9,14 +9,16 @@ import { ReservasActivasPageRoutingModule } from './reservas-activas-routing.mod
 import { ReservasActivasPage } from './reservas-activas.page';
 import { CardComponent } from '../../components/card/card.component';
 import { HeaderComponentComponent } from '../../header-component/header-component.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReservasActivasPageRoutingModule
+    ReservasActivasPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [ReservasActivasPage, CardComponent, HeaderComponentComponent]
+  declarations: [ReservasActivasPage]
 })
 export class ReservasActivasPageModule {}

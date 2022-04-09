@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { HeaderComponentComponent } from '../header-component/header-component.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HeaderComponentComponent } from '../header-component/header-component.c
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [Tab3Page, HeaderComponentComponent]
+  declarations: [Tab3Page]
 })
 export class Tab3PageModule {}

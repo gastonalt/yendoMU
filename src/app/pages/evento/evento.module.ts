@@ -8,14 +8,16 @@ import { EventoPageRoutingModule } from './evento-routing.module';
 
 import { EventoPage } from './evento.page';
 import { HeaderComponentComponent } from 'src/app/header-component/header-component.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EventoPageRoutingModule
+    EventoPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [EventoPage,HeaderComponentComponent]
+  declarations: [EventoPage]
 })
 export class EventoPageModule {}
