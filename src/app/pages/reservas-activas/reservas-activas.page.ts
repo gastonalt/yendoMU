@@ -16,12 +16,11 @@ export class ReservasActivasPage implements OnInit {
     ballColor: 'transparent',
     fecha: '11/04/22',
     time: 21,
-  }
+  };
   cards= [
   ];
 
   constructor(private router: Router, private storage: Storage) { }
-  
   navigate(bolicheYendo: any){
     this.router.navigate(['/evento'], {
       replaceUrl: true,
@@ -35,9 +34,9 @@ export class ReservasActivasPage implements OnInit {
   ngOnInit() {
     this.storage.get('reservado').then((boliches)=>{
       if(boliches){
-        this.cards = boliches
+        this.cards = boliches;
       }
-    })
+    });
   }
 
 }

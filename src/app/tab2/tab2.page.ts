@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -37,10 +38,20 @@ export class Tab2Page implements OnInit{
 
   boliches = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.boliches = this.cards;
+  }
+
+  navigate(bolicheYendo: any){
+    this.router.navigate(['/evento'], {
+      replaceUrl: true,
+      state: {
+        bolicheYendo,
+        reservado: true
+      }
+    });
   }
 
   buscarHandler($event: any){
