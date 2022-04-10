@@ -12,39 +12,32 @@
     </ion-header>
 
 
-    <ion-searchbar showCancelButton="focus" cancelButtonText="Cancelar"></ion-searchbar>
-    <ion-list style="width: 95%;">
-        <ion-item>
-            <ion-label>Mora</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>Baro</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>MDM</ion-label>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-label>Boliche de Yendo</ion-label>
+    <ion-searchbar showCancelButton="focus" cancelButtonText="Cancelar" (ionBlur)="buscar = false" (ionFocus)="buscar = true"(ionCancel)="buscar = false" (ionChange)="buscarHandler($event)" (ionClear)="boliches = cards"></ion-searchbar>
+    <ion-list style="width: 95%;" *ngIf="buscar">
+        <ion-item *ngFor="let boliche of boliches">
+            <ion-label>{{boliche.title}}</ion-label>
         </ion-item>
     </ion-list>
-    <div class="container" style="margin-top: .2em;">
+    <section *ngIf="!buscar">
+      <div class="container" style="margin-top: .2em;">
         <div style="margin: .2em;" class="viernes">Viernes</div>
         <div style="margin: .2em;" class="sabados">Sabado</div>
         <div style="padding: .2em;" class="logo1"><img src="data:image/jpeg;base64,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"
-                alt=""></div>
+          alt=""></div>
         <div style="padding: .2em;" class="logo2"><img src="https://image.shutterstock.com/image-vector/illustration-graphic-abstract-creative-example-260nw-2029259339.jpg" alt=""></div>
         <div style="padding: .2em;" class="logo3"><img src="https://us.123rf.com/450wm/sentavio/sentavio1709/sentavio170900007/86026346-wave-circle-abstract-logo-plantilla-de-vector-de-dise%C3%B1o-s%C3%ADmbolo-de-lujo-ondulado-icono-de-concepto-d.jpg" alt=""></div>
         <div style="padding: .2em;" class="logo4"><img src="https://www.ejemplos.co/wp-content/uploads/2015/11/Logo-Adidas.jpg" alt=""></div>
-    </div>
-    <div class="dentroRos">
+      </div>
+      <div class="dentroRos">
         Dentro de Rosario
-    </div>
-    <div class="alredeRos">
+      </div>
+      <div class="alredeRos">
         Alrededores
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </section>
 
 </ion-content>
