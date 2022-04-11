@@ -1,26 +1,26 @@
 <ion-tabs>
-  <div class="tabs">
-    <!-- <ion-tab-bar slot="bottom" translucent="true"> -->
-        <ion-tab-button tab="tab1">
+    <div class="tabs">
+        <!-- <ion-tab-bar slot="bottom" translucent="true"> -->
+        <ion-tab-button tab="tab1" [class.active-item]="selectedPath.includes('tab1')">
             <ion-icon name="home-outline"></ion-icon>
             <ion-label>Inicio</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab2">
+        <ion-tab-button tab="tab2" [class.active-item]="selectedPath.includes('tab2')">
             <ion-icon name="search-outline"></ion-icon>
             <ion-label>Buscar</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab3">
-            <ion-icon name="bookmark-outline"></ion-icon>
-            <ion-label>Ofertas</ion-label>
+        <ion-tab-button tab="tab3" [class.active-item]="selectedPath.includes('tab3')">
+            <ion-icon name="radio-outline"></ion-icon>
+            <ion-label>Boliches</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab4">
+        <ion-tab-button tab="tab4" [class.active-item]="selectedPath.includes('tab4')">
             <ion-icon name="person-outline"></ion-icon>
             <ion-label>Perfil</ion-label>
         </ion-tab-button>
-    <!-- </ion-tab-bar> -->
-  </div>
+        <!-- </ion-tab-bar> -->
+    </div>
 
 </ion-tabs>

@@ -7,10 +7,10 @@ export const cards = [
     fecha: '11/04/22',
     time: 21,
     boliche:{
-      nombre:'',
-      descripcion:'',
-      direccion:'',
-      picture:''
+      nombre:'Boliche Yendo',
+      descripcion:'El mejor boliche por lejos, el mismo de la app =)',
+      direccion:'Juan Manuel de Rosas y Uriburu',
+      picture:'../assets/common/logo.jpeg'
     }
   },
 {
@@ -20,6 +20,12 @@ export const cards = [
   ballColor: '#E65768',
   fecha: '27/01/22',
   time: 22,
+  boliche:{
+    nombre:'Madame',
+    descripcion:'El salón de fiestas dispone de 750 metros cuadrados cubiertos, además de los 1.500 de parque',
+    direccion:'Pellegrini y Rioja',
+    picture:'https://chapsmusicsupervision.files.wordpress.com/2012/11/logo-madam.jpg?w=260'
+  }
 },{
   title: 'L4Rmx`s Party',
   descripcion: 'Una fiesta inigulable que te llenará de buenos recuerdos, ideal para venir con esa persona especial!!!',
@@ -27,5 +33,11 @@ export const cards = [
   ballColor: '#FAD566',
   fecha: '25/04/21',
   time: 18,
+  boliche:{
+    nombre:'Shawn',
+    descripcion:'Descripcion de prueba',
+    direccion:'Direccion de prueba',
+    picture:'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/testing-logo-design-template-ce84480d61b3db9a8e1522a99875832f_screen.jpg?ts=1615794516'
+  }
 }
 ];

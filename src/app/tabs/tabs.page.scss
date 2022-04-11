@@ -1,12 +1,16 @@
 .tabs {
-  position: absolute;
-  bottom: 0px;
-  padding: 0.2em;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  color: rgb(140, 140, 140);
-  backdrop-filter: blur(25px);
-  background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0px;
+    padding: 0.2em;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(140, 140, 140);
+    backdrop-filter: blur(25px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.active-item {
+    color: rgb(68, 68, 68);
 }
