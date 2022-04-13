@@ -10,12 +10,20 @@ import { cards } from 'src/app/prototypeData';
 export class TodosBolichesPage implements OnInit {
 
   cards = cards;
-
   previusUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigate(bolicheYendo: any){
+    this.router.navigate(['/perfil-boliche'], {
+      replaceUrl: true,
+      state: {
+        bolicheYendo
+      }
+    });
   }
 
 }

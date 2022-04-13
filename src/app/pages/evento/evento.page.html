@@ -22,7 +22,7 @@
             <!-- <ion-icon name="sunny-outline" *ngIf="bolicheYendo.time < 21"></ion-icon>
             <ion-icon name="moon-outline" *ngIf="bolicheYendo.time >= 21"></ion-icon> -->
         </h2>
-        <ion-item lines="none">
+        <ion-item lines="none" (click)="navigateBoliche(bolicheYendo)">
             <!--Acá iria el (click) que nos lleve a la página del boliche-->
             <ion-avatar slot="start">
                 <img [src]="bolicheYendo.boliche.picture" style="object-fit: contain;" />

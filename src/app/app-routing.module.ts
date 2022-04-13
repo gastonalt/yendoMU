@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'todos-boliches',
     loadChildren: () => import('./pages/todos-boliches/todos-boliches.module').then( m => m.TodosBolichesPageModule)
+  },
+  {
+    path: 'perfil-boliche',
+    loadChildren: () => import('./pages/perfil-boliche/perfil-boliche.module').then( m => m.PerfilBolichePageModule)
   }
 
 

@@ -10,7 +10,8 @@ export const cards = [
       nombre:'Boliche Yendo',
       descripcion:'El mejor boliche por lejos, el mismo de la app =)',
       direccion:'Juan Manuel de Rosas y Uriburu',
-      picture:'../assets/common/logo.jpeg'
+      picture:'../assets/common/logo.jpeg',
+      cover:'https://www.rocksinsubtitulos.uk/images/biblioteca/mega-spanish-party-zahara-cabecera.jpg'
     }
   },
 {
@@ -24,7 +25,8 @@ export const cards = [
     nombre:'Madame',
     descripcion:'El salón de fiestas dispone de 750 metros cuadrados cubiertos, además de los 1.500 de parque',
     direccion:'Pellegrini y Rioja',
-    picture:'https://chapsmusicsupervision.files.wordpress.com/2012/11/logo-madam.jpg?w=260'
+    picture:'https://chapsmusicsupervision.files.wordpress.com/2012/11/logo-madam.jpg?w=260',
+    cover: 'https://www.rocksinsubtitulos.uk/images/biblioteca/mega-spanish-party-zahara-cabecera.jpg'
   }
 },{
   title: 'L4Rmx`s Party',
@@ -37,7 +39,8 @@ export const cards = [
     nombre:'Shawn',
     descripcion:'Descripcion de prueba',
     direccion:'Direccion de prueba',
-    picture:'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/testing-logo-design-template-ce84480d61b3db9a8e1522a99875832f_screen.jpg?ts=1615794516'
+    picture:'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/testing-logo-design-template-ce84480d61b3db9a8e1522a99875832f_screen.jpg?ts=1615794516',
+    cover: 'https://www.rocksinsubtitulos.uk/images/biblioteca/mega-spanish-party-zahara-cabecera.jpg'
   }
 }
 ];

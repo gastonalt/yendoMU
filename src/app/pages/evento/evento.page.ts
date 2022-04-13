@@ -13,12 +13,18 @@ export class EventoPage implements OnInit {
   reservadoView = false;
   reservado = false;
   fecha = new Date();
-  previusUrl = 'f/t/tab1';
+  previusUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
+  boliche = this.router.getCurrentNavigation().extras.state?.bolicheYendo;
 
   constructor(private router: Router, private storage: Storage) { }
 
-  goBack(){
-    this.router.navigate(['f/t/tab1']);
+  navigateBoliche(bolicheYendo: any){
+    this.router.navigate(['/perfil-boliche'], {
+      replaceUrl: true,
+      state: {
+        bolicheYendo
+      }
+    });
   }
 
   reservar(){
@@ -33,7 +39,9 @@ export class EventoPage implements OnInit {
   }
 
   ngOnInit() {
-    this.previusUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
+    if(this.previusUrl === '/perfil-boliche'){
+      this.previusUrl = '/f/t/tab1'
+    }
     this.storage.get('reservado').then((storageReservado: any[])=>{
       if(storageReservado){
         storageReservado.forEach(element => {
