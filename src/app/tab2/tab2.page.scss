@@ -67,6 +67,24 @@ img {
     background-position: 0%;
 }
 
+.todosLosBoliches{
+  margin-top: 0em;
+  background-image: url('https://infofunes.com.ar/uploads/baile%20boliche.jpg');
+  background-size: cover;
+  height: 6em;
+  color: white;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: flex;
+  align-items: flex-end;
+  padding: .5em 0;
+  justify-content: center;
+  margin: .2em .3em;
+  border-radius: .7em;
+  background-position: 0%;
+}
+
 .alredeRos {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzWIoTYA1YqfbNx8I8pdrvTK67QtPHSpwjPg&usqp=CAU');
     background-size: cover;

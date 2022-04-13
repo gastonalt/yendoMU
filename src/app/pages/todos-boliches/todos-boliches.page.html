@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+
+  <section >
+    <div class="parent">
+            <ion-buttons slot="start">
+                <ion-back-button text="" defaultHref={{previusUrl}} style="margin: 1em; z-index: 100;"></ion-back-button>
+                <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
+            </ion-buttons>
+          </div>
+</section>
+
+  <ion-header collapse="condense">
+      <ion-toolbar>
+          <ion-title size="large">Boliches</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <!--     <div style="
+  height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  ">
+      <h3>Proximamente</h3>
+  </div> -->
+
+  <ion-list>
+      <ion-item *ngFor="let bolicheYendo of cards">
+          <!--Acá iria el (click) que nos lleve a la página del boliche-->
+          <ion-avatar slot="start">
+              <img [src]="bolicheYendo.boliche.picture" style="object-fit: contain;" />
+          </ion-avatar>
+          <ion-label>
+              <h2>{{bolicheYendo.boliche.nombre}}</h2>
+              <h3>{{bolicheYendo.boliche.direccion}}</h3>
+              <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+          </ion-label>
+      </ion-item>
+  </ion-list>
+
+</ion-content>

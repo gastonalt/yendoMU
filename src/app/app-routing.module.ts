@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'reservas-activas',
     loadChildren: () => import('./pages/reservas-activas/reservas-activas.module').then( m => m.ReservasActivasPageModule)
+  },
+  {
+    path: 'todos-boliches',
+    loadChildren: () => import('./pages/todos-boliches/todos-boliches.module').then( m => m.TodosBolichesPageModule)
   }
 
 

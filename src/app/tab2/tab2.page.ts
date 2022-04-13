@@ -20,6 +20,12 @@ export class Tab2Page implements OnInit{
     this.boliches = this.cards;
   }
 
+  navigateTodosLosBoliches(){
+    this.router.navigate(['/todos-boliches'], {
+      replaceUrl: true,
+    });
+  }
+
   navigate(bolicheYendo: any){
     this.router.navigate(['/evento'], {
       replaceUrl: true,

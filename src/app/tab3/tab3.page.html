@@ -5,33 +5,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Boliches</ion-title>
-        </ion-toolbar>
-    </ion-header>
-
-    <!--     <div style="
-    height:70vh;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    ">
-        <h3>Proximamente</h3>
-    </div> -->
-
-    <ion-list>
-        <ion-item *ngFor="let bolicheYendo of cards">
-            <!--Acá iria el (click) que nos lleve a la página del boliche-->
-            <ion-avatar slot="start">
-                <img [src]="bolicheYendo.boliche.picture" style="object-fit: contain;" />
-            </ion-avatar>
-            <ion-label>
-                <h2>{{bolicheYendo.boliche.nombre}}</h2>
-                <h3>{{bolicheYendo.boliche.direccion}}</h3>
-                <!-- <p>Listen, I've had a pretty messed up day...</p> -->
-            </ion-label>
-        </ion-item>
-    </ion-list>
-
+  <ion-header collapse="condense">
+    <ion-toolbar>
+        <ion-title size="large">Ofertas</ion-title>
+    </ion-toolbar>
+</ion-header>
+<section>
+  <h2 style="margin-left: .7em;">Las mejores pintas!</h2>
+  <div class="scrolling-wrapper">
+    <div *ngFor="let card of cardsImp" class="app-card">
+        <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+    </div>
+</div>
+</section>
+<section style="margin-bottom: 5em;">
+  <h2 style="margin-left: .7em;">Happy Hour hoy</h2>
+  <div class="scrolling-wrapper">
+    <div *ngFor="let card of cardsInv" class="app-card">
+        <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+    </div>
+</div>
+</section>
 </ion-content>

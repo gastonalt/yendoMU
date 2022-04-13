@@ -12,6 +12,8 @@ export class ReservasActivasPage implements OnInit {
 
   cards = cards;
 
+  previusUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
+
   constructor(private router: Router, private storage: Storage) { }
   navigate(bolicheYendo: any){
     this.router.navigate(['/evento'], {

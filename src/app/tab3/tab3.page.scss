@@ -1,0 +1,11 @@
+.app-card {
+  width: 95%;
+  margin: 0 .5em;
+  flex: 0 0 auto;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
