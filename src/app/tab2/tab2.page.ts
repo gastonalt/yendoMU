@@ -38,7 +38,6 @@ export class Tab2Page implements OnInit{
 
   buscarHandler($event: any){
     if($event.target.value !== ''){
-      console.log($event.target.value);
       this.boliches = [];
       this.cards.forEach(bolicheArray=>{
         // eslint-disable-next-line @typescript-eslint/prefer-for-of
