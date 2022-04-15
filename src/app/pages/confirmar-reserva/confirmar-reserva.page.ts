@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-confirmar-reserva',
@@ -9,7 +10,7 @@ import { Storage } from '@ionic/storage';
 })
 export class ConfirmarReservaPage implements OnInit {
 
-  constructor(private router: Router, private storage: Storage) { }
+  constructor(private router: Router, private storage: Storage, private alertController: AlertController) { }
   previusUrl = "/f/t/tab1";
   bolicheYendo = this.router.getCurrentNavigation().extras.state?.bolicheYendo;
   user = {
@@ -33,6 +34,19 @@ export class ConfirmarReservaPage implements OnInit {
       })
     }
   )}
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Atención!',
+      message: 'Aún no está disponible esta función.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
   
   ngOnInit(){
     if(this.router.getCurrentNavigation().extras.state?.previusUrl){
