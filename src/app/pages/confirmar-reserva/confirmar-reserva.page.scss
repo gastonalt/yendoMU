@@ -1,0 +1,47 @@
+.icon {
+    display: inline-block;
+    font-size: 35px;
+    vertical-align: middle;
+}
+
+ion-item {
+    margin-top: 1em;
+    --background: transparent !important;
+}
+
+.boton-editar {
+    margin-top: .7em;
+    display: flex;
+    justify-content: center;
+}
+
+ion-input {
+    width: 97%;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    text-indent: .5em;
+    border-radius: 1em;
+}
+
+ion-label {
+    text-indent: 2em;
+    color: #ccc;
+}
+
+.reservar {
+    --background: rgb(255, 255, 116);
+    --color: black;
+    font-size: 1em;
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+}
+
+.reservarpagar {
+    --background: yellow;
+    --color: black;
+    font-size: 1em;
+    -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+}

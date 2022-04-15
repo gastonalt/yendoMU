@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+    <div class="parent">
+        <div class="div1">
+            <ion-buttons slot="start">
+                <ion-back-button text="" defaultHref={{previusUrl}} style="margin: 1em; z-index: 100;"></ion-back-button>
+                <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
+            </ion-buttons>
+        </div>
+    </div>
+    <section style="display: flex;  gap: .2em; justify-content: center; width: 100%; margin-top: 2em;">
+        <div class="avatar" [ngStyle]="{'background-image': 'url(' + user.ppic + ')'}" style="background-size: cover; height: 6em; width: 6em; background-color: red; border-radius: 50%;"></div>
+        <div class="avatar" [ngStyle]="{'background-image': 'url(' + bolicheYendo.boliche.picture + ')'}" style="background-size: contain; height: 6em; width: 6em; background-color: blue; border-radius: 50%;"></div>
+    </section>
+    <section style="width: 95%; margin: auto;">
+        <h1 style="text-align: center;">
+            Reservas en: {{bolicheYendo.boliche.nombre}}
+        </h1>
+        <h5 style="padding: 0 1em;">
+            {{bolicheYendo.descripcion}}
+        </h5>
+    </section>
+    <section>
+        <ion-item lines="none">
+            <ion-label position="stacked">Código de pública:</ion-label>
+            <ion-input [placeholder]="123456"></ion-input>
+        </ion-item>
+    </section>
+    <section>
+        <div class="boton-editar">
+            <ion-button (click)="reservar()" class="reservar">
+                Reservar
+            </ion-button>
+        </div>
+        <div class="boton-editar">
+            <ion-button (click)="reservar()" class="reservarpagar">
+                Reservar y pagar
+            </ion-button>
+        </div>
+    </section>
+</ion-content>

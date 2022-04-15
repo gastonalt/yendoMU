@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'perfil-boliche',
     loadChildren: () => import('./pages/perfil-boliche/perfil-boliche.module').then( m => m.PerfilBolichePageModule)
+  },
+  {
+    path: 'confirmar-reserva',
+    loadChildren: () => import('./pages/confirmar-reserva/confirmar-reserva.module').then( m => m.ConfirmarReservaPageModule)
   }
 
 

@@ -28,13 +28,24 @@ export class EventoPage implements OnInit {
   }
 
   reservar(){
-    this.reservado = true;
-    this.storage.get('reservado').then((storageReservado: any)=>{
-      if(!storageReservado){
-        storageReservado = [];
+//    this.reservado = true;
+      this.router.navigate(['/confirmar-reserva'],{
+        state:{
+          bolicheYendo : this.bolicheYendo,
+          previusUrl : this.previusUrl
+        }
+      })
+  }
+
+  ionViewWillEnter(){
+    this.storage.get('reservado').then((storageReservado: any[])=>{
+      if(storageReservado){
+        storageReservado.forEach(element => {
+          if(element.title === this.bolicheYendo.title){
+            this.reservado = true;
+          }
+        });
       }
-      storageReservado.push(this.bolicheYendo);
-      this.storage.set('reservado',storageReservado);
     });
   }
 
