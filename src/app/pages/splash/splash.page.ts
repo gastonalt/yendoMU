@@ -37,7 +37,7 @@ export class SplashPage implements OnInit {
   }
 
   iniciarSesion(){
-
+    this.router.navigate(['/f/t/tab1']);
   }
 
 }
