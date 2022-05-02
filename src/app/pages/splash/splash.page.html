@@ -11,8 +11,25 @@
 
     <section>
         <div class="login_button">
-            <ion-button expand="block" (click)="navigate()">Iniciar sesion</ion-button>
-            <a (click)="presentAlert()"> Crear una cuenta </a>
+          <section style="display: block;">
+            <ion-item lines="none">
+                <ion-label position="stacked">Email o Usuario</ion-label>
+                <ion-input placeholder=""></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label position="stacked">Contraseña</ion-label>
+                <ion-input placeholder=""></ion-input>
+                <small style="align-self: flex-end;"><a href="">Olvidé mi contraseña</a></small>
+            </ion-item>
+
+            <div class="boton-editar">
+                <ion-button (click)="iniciarSesion()">
+                    Iniciar Sesión
+                </ion-button>
+            </div>
+
+        </section>
+            <a (click)="navigateSignUp()"> Crear una cuenta </a>
         </div>
     </section>
 

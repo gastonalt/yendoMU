@@ -2,17 +2,49 @@ ion-content {
     overflow-y: hidden;
 }
 
+ion-item {
+  margin-top: 1%;
+  --background: transparent !important;
+}
+
+.boton-editar {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+ion-input {
+  font-size: 1.5em;
+  border: 1px solid #ccc;
+  text-indent: .5em;
+  border-radius: 1em;
+}
+
+ion-label {
+  text-indent: 2em;
+  color: #ccc;
+}
+
+ion-button {
+  --background: yellow;
+  --color: black;
+  font-size: 1em;
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 1em;
+}
+
 .header_logo {
     content: '';
-    height: 70vh;
-    background-color: #FEFEFE;
+    height: 40vh;
+    /*background-color: #FEFEFE;
     background-image: url('../../../assets/splash/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.webp');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 110%;
     border-radius: 0 0 2em 2em;
     -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.15);*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,10 +66,10 @@ section {
 
 .login_button {
     width: 80%;
-    margin-top: 5em;
+    margin-top: 1em;
     a {
         display: flex;
         justify-content: center;
-        margin-top: 1em;
+        margin-top: 10%;
     }
 }

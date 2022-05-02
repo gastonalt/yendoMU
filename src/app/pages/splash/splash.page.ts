@@ -28,8 +28,16 @@ export class SplashPage implements OnInit {
   ngOnInit() {
   }
 
-  navigate(){
-    this.router.navigate(['/f'], {replaceUrl: true});
+  navigateLogin(){
+    this.router.navigate(['/login'], {replaceUrl: true});
+  }
+
+  navigateSignUp(){
+    this.router.navigate(['/signup'], {replaceUrl: true});
+  }
+
+  iniciarSesion(){
+
   }
 
 }

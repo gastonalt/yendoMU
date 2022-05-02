@@ -1,0 +1,75 @@
+<ion-content [fullscreen]="true">
+
+  <section>
+      <div class="parent">
+          <ion-buttons slot="start">
+              <ion-back-button text="" defaultHref='/' style="margin: 1em; z-index: 100;"></ion-back-button>
+              <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
+          </ion-buttons>
+      </div>
+  </section>
+
+  <ion-header collapse="condense">
+      <ion-toolbar>
+          <ion-title size="large">Crear una cuenta</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <section style="display: block;">
+    <form [formGroup]="signUpForm">
+      <ion-item lines="none">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input placeholder="" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="stacked">Repetir email</ion-label>
+        <ion-input placeholder="" formControlName="repetirEmail"></ion-input>
+    </ion-item>
+      <ion-item lines="none">
+        <ion-label position="stacked">Usuario</ion-label>
+        <ion-input placeholder="" formControlName="usuario"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Nombres</ion-label>
+      <ion-input placeholder="" formControlName="nombres"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Apellidos</ion-label>
+      <ion-input placeholder="" formControlName="apellidos"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Tipo de DNI</ion-label>
+      <ion-select value="notifications" interface="action-sheet">
+        <ion-select-option value="enable">Enable</ion-select-option>
+        <ion-select-option value="mute">Mute</ion-select-option>
+        <ion-select-option value="mute_week">Mute for a week</ion-select-option>
+        <ion-select-option value="mute_year">Mute for a year</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Número de DNI</ion-label>
+      <ion-input placeholder="" formControlName="apellidos"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input placeholder="" type="password" formControlName="contrasena"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Repetir contraseña</ion-label>
+      <ion-input placeholder="" type="password" formControlName="repetirContrasena"></ion-input>
+    </ion-item>
+    </form>
+
+  <div class="boton-editar">
+      <ion-button (click)="crearCuenta()">
+          Crear cuenta
+      </ion-button>
+  </div>
+
+  <ion-buttons style="display: flex; justify-content: center; margin-bottom: 3em;">
+    <ion-back-button text="Ya tenés una cuenta?" defaultHref='/' icon=""></ion-back-button>
+  </ion-buttons>
+
+</section>
+
+</ion-content>
