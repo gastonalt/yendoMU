@@ -20,7 +20,7 @@ export class SignupPage implements OnInit {
     this.signUpForm = this.fb.group({
       email: ['', Validators.required, Validators.pattern(this.emailRegex)],
       repetirEmail: ['', Validators.required, Validators.pattern(this.emailRegex)],
-      tipoDni: [null, Validators.required],
+      tipoDni: ['', Validators.required],
       nroDni: ['', Validators.required],
       usuario: ['', Validators.required],
       nombres:['', Validators.required],
@@ -33,7 +33,7 @@ export class SignupPage implements OnInit {
     if(
       this.signUpForm.controls.email.value !== '' &&
       this.signUpForm.controls.repetirEmail.value !== '' &&
-      this.signUpForm.controls.tipoDni.value !== null &&
+      this.signUpForm.controls.tipoDni.value !== '' &&
       this.signUpForm.controls.nroDni.value !== '' &&
       this.signUpForm.controls.usuario.value !== '' &&
       this.signUpForm.controls.nombres.value !== '' &&
@@ -43,7 +43,7 @@ export class SignupPage implements OnInit {
     ){
       if(this.signUpForm.controls.email.value === this.signUpForm.controls.repetirEmail.value
       && this.signUpForm.controls.contrasena.value === this.signUpForm.controls.repetirContrasena.value){
-        console.log('coincide todo');
+        //llamo al servicio para crear un usuario
       }
     }
   }

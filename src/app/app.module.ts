@@ -11,6 +11,8 @@ import { CardComponent } from './components/card/card.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { ComponentsModule } from './components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,8 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
             IonicModule.forRoot(),
             AppRoutingModule,
             IonicStorageModule.forRoot(),
-            ComponentsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+            ComponentsModule,
+            HttpClientModule,],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

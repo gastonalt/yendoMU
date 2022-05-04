@@ -3,6 +3,7 @@ import { cards } from '../prototypeData';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { TestServiceService } from '../services/test-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -15,7 +16,8 @@ export class Tab1Page implements OnInit{
 
   constructor(public alertController: AlertController,
               private router: Router,
-              private storage: Storage) {}
+              private storage: Storage,
+              private testService: TestServiceService) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -39,6 +41,10 @@ export class Tab1Page implements OnInit{
     });
   }
 
-  ngOnInit(): void {};
+  ngOnInit(): void {
+    this.testService.getBoliches().subscribe((value)=>{
+      console.log(value);
+    });
+  };
 
 }
