@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-splash',
@@ -9,14 +11,20 @@ import { AlertController } from '@ionic/angular';
 })
 export class SplashPage implements OnInit {
 
-  constructor(public alertController: AlertController,
-              private router: Router) {}
+  signUpForm: FormGroup;
+  emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+  passwordRegex = '"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"';
 
-  async presentAlert() {
+  constructor(private fb: FormBuilder,
+              public alertController: AlertController,
+              private router: Router,
+              private authService: AuthService) {}
+
+  async presentAlert(msg: string) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Atención!',
-      message: 'En esta prueba no se admiten usuarios nuevos.',
+      message: msg,
       buttons: ['OK']
     });
 
@@ -26,6 +34,10 @@ export class SplashPage implements OnInit {
   }
 
   ngOnInit() {
+    this.signUpForm = this.fb.group({
+      email: ['', Validators.required, Validators.pattern(this.emailRegex)],
+      contrasena:['', Validators.required, Validators.pattern(this.passwordRegex)],
+    });
   }
 
   navigateLogin(){
@@ -37,7 +49,14 @@ export class SplashPage implements OnInit {
   }
 
   iniciarSesion(){
-    this.router.navigate(['/f/t/tab1']);
+    const email = this.signUpForm.controls.email.value;
+    const contrasena = this.signUpForm.controls.contrasena.value;
+    this.authService.login(email, contrasena).subscribe((res: any)=>{
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/f/t/tab1'], {replaceUrl: true});
+    },()=>{
+      this.presentAlert('Usuario o contraseña inválido');
+    });
   }
 
 }

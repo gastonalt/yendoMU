@@ -12,15 +12,17 @@
     <section>
         <div class="login_button">
           <section style="display: block;">
-            <ion-item lines="none">
-                <ion-label position="stacked">Email o Usuario</ion-label>
-                <ion-input placeholder=""></ion-input>
-            </ion-item>
-            <ion-item lines="none">
-                <ion-label position="stacked">Contraseña</ion-label>
-                <ion-input placeholder="" type="password"></ion-input>
-                <small style="align-self: flex-end;"><a href="">Olvidé mi contraseña</a></small>
-            </ion-item>
+            <form [formGroup]="signUpForm">
+              <ion-item lines="none">
+                  <ion-label position="stacked">Email o Usuario</ion-label>
+                  <ion-input placeholder="ejemplo@email.com" formControlName="email" type="email"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                  <ion-label position="stacked">Contraseña</ion-label>
+                  <ion-input placeholder="******" formControlName="contrasena" type="password"></ion-input>
+                  <small style="align-self: flex-end;"><a href="">Olvidé mi contraseña</a></small>
+              </ion-item>
+            </form>
 
             <div class="boton-editar">
                 <ion-button (click)="iniciarSesion()">

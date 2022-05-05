@@ -17,7 +17,7 @@ export class Tab4Page implements OnInit {
   constructor(private router: Router) { }
 
   navigateReservasActivas(){
-    this.router.navigate(['/reservas-activas'])
+    this.router.navigate(['/reservas-activas']);
   }
 
   editarPerfil(){
@@ -30,6 +30,13 @@ export class Tab4Page implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/'], {
+      replaceUrl: true,
+    });
   }
 
 }

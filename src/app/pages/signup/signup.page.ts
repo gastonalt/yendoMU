@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { Persona } from 'src/app/models/Persona';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +16,10 @@ export class SignupPage implements OnInit {
   emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
   passwordRegex = '"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"';
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder,
+              private router: Router,
+              private authService: AuthService,
+              private alertController: AlertController) { }
 
 
   ngOnInit() {
@@ -29,6 +35,20 @@ export class SignupPage implements OnInit {
       repetirContrasena:['', Validators.required, Validators.pattern(this.passwordRegex)],
     });
   }
+
+  async presentAlert(mensaje: string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Credenciales inválidas!',
+      message: mensaje,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
   crearCuenta(){
     if(
       this.signUpForm.controls.email.value !== '' &&
@@ -43,7 +63,22 @@ export class SignupPage implements OnInit {
     ){
       if(this.signUpForm.controls.email.value === this.signUpForm.controls.repetirEmail.value
       && this.signUpForm.controls.contrasena.value === this.signUpForm.controls.repetirContrasena.value){
-        //llamo al servicio para crear un usuario
+        const email = this.signUpForm.controls.email.value;
+        const tipoDni = this.signUpForm.controls.tipoDni.value;
+        const nroDni = this.signUpForm.controls.nroDni.value;
+        const usuario = this.signUpForm.controls.usuario.value;
+        const nombres = this.signUpForm.controls.nombres.value;
+        const apellidos = this.signUpForm.controls.apellidos.value;
+        const contrasena = this.signUpForm.controls.contrasena.value;
+        const persona = new Persona(usuario,nombres,tipoDni,nroDni,apellidos,email,contrasena);
+        this.authService.signup(persona).subscribe((res: any)=>{
+          if(res.mensaje && res.mensaje === 'Exito'){
+            this.router.navigate(['f/t/tab1']);
+          }
+        },(err)=>{
+          console.log(err);
+          this.presentAlert(err.error.mensaje);
+        });
       }
     }
   }

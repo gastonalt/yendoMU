@@ -19,10 +19,18 @@
         </div>
     </div>
 
-    <div class="boton-editar">
-        <ion-button (click)="editarPerfil()">
-            Editar
+    <div style="display: flex; justify-content: space-around; margin-bottom: 5em;">
+      <div class="boton-editar">
+          <ion-button (click)="editarPerfil()">
+              Editar
+          </ion-button>
+      </div>
+
+      <div class="boton-editar">
+        <ion-button (click)="cerrarSesion()" class="cerrar-sesion-buton">
+            Cerrar sesion
         </ion-button>
+      </div>
     </div>
 
 </ion-content>
