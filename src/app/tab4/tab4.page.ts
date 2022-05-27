@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class Tab4Page implements OnInit {
 
+
+
   user = {
     nombre: 'Gastón Altamirano',
     username: 'gastonalt',
