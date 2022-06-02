@@ -34,10 +34,14 @@ export class SplashPage implements OnInit {
   }
 
   ngOnInit() {
-    this.signUpForm = this.fb.group({
-      email: ['', Validators.required, Validators.pattern(this.emailRegex)],
-      contrasena:['', Validators.required, Validators.pattern(this.passwordRegex)],
-    });
+    if(localStorage.getItem('token')=== null){
+      this.signUpForm = this.fb.group({
+        email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
+        contrasena:['', [Validators.required, Validators.pattern(this.passwordRegex)]],
+      });
+    }else{
+      this.router.navigate(['/f/t/tab1'], {replaceUrl: true});      
+    }
   }
 
   navigateLogin(){

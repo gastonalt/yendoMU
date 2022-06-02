@@ -1,11 +1,16 @@
 <div class="avatar-container">
     <div class="flex-profile-pic-container">
-        <div class="profile-pic" [ngStyle]="{'background-image': 'url(' + user.ppic + ')'}">
-            <div class="edit-button" (click)="presentAlert()">
+        <div class="profile-pic" [ngStyle]="user !== undefined && {'background-image': 'url(' + user.imgURL + ')'}">
+            <div class="edit-button" (click)="file.click()">
                 <ion-icon name="brush-outline"></ion-icon>
             </div>
         </div>
     </div>
-    <h1>{{user.nombre}}</h1>
-    <h5 class="username"><b>@{{user.username}}</b></h5>
+    <form method="POST" action="/profile-upload-multiple" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="profile-files" required multiple style="display:none" #file/>
+        </div>
+    </form>
+    <h1>{{user? user.nombres + ' ' + user.apellidos : ''}}</h1>
+    <h5 class="username"><b>@{{user? user.username : ''}}</b></h5>
 </div>

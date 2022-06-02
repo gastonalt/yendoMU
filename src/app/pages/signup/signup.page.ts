@@ -24,15 +24,15 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {
     this.signUpForm = this.fb.group({
-      email: ['', Validators.required, Validators.pattern(this.emailRegex)],
-      repetirEmail: ['', Validators.required, Validators.pattern(this.emailRegex)],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
+      repetirEmail: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
       tipoDni: ['', Validators.required],
       nroDni: ['', Validators.required],
       usuario: ['', Validators.required],
       nombres:['', Validators.required],
       apellidos:['', Validators.required],
-      contrasena:['', Validators.required, Validators.pattern(this.passwordRegex)],
-      repetirContrasena:['', Validators.required, Validators.pattern(this.passwordRegex)],
+      contrasena:['', [Validators.required, Validators.pattern(this.passwordRegex)]],
+      repetirContrasena:['', [Validators.required, Validators.pattern(this.passwordRegex)]],
     });
   }
 

@@ -7,6 +7,7 @@ export class Persona{
   nroDni: number;
   apellidos: string;
   email: string;
+  imgURL: string;
   password: string;
 
 constructor($username: string , $nombres: string , $tipoDni: string , $nroDni: number ,

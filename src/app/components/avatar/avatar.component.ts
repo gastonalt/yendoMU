@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Persona } from 'src/app/models/Persona';
 
 @Component({
   selector: 'app-avatar',
@@ -9,23 +10,12 @@ import { AlertController } from '@ionic/angular';
 })
 export class AvatarComponent implements OnInit {
 
-  @Input() user;
+  @Input() user:Persona;
+  imgURL = "";
 
   constructor(private router: Router, private alertController: AlertController) { }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Atención!',
-      message: 'Aún no está disponible esta función.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
+  ngOnInit() {
   }
-
-  ngOnInit() {}
 
 }
