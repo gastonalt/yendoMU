@@ -1,16 +1,31 @@
 <div class="avatar-container">
     <div class="flex-profile-pic-container">
         <div class="profile-pic" [ngStyle]="user !== undefined && {'background-image': 'url(' + user.imgURL + ')'}">
-            <div class="edit-button" (click)="file.click()">
+            <div class="edit-button" (click)="fileInput.click()" *ngIf="!uploader.getNotUploadedItems().length">
                 <ion-icon name="brush-outline"></ion-icon>
+            </div>
+            <div class="edit-button" (click)="uploader.uploadAll()" *ngIf="uploader.getNotUploadedItems().length">
+                <ion-icon name="checkmark-outline"></ion-icon>
             </div>
         </div>
     </div>
-    <form method="POST" action="/profile-upload-multiple" enctype="multipart/form-data">
         <div>
-            <input type="file" name="profile-files" required multiple style="display:none" #file/>
+            <input
+            style="display:none;"
+            #fileInput
+            type="file"
+            name="image"
+            ng2FileSelect [uploader]="uploader"
+            accept="image/x-png,image/gif,image/jpeg"
+          />
+<!--           <button
+            type="button"
+            (click)="uploader.uploadAll()"
+            [disabled]="!uploader.getNotUploadedItems().length"
+          >
+            Upload
+          </button> -->
         </div>
-    </form>
-    <h1>{{user? user.nombres + ' ' + user.apellidos : ''}}</h1>
+    <h1 style="text-transform: capitalize;">{{user? user.nombres + ' ' + user.apellidos : ''}}</h1>
     <h5 class="username"><b>@{{user? user.username : ''}}</b></h5>
 </div>

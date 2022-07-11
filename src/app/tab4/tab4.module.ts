@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { Tab4PageRoutingModule } from './tab4-routing.module';
-
+import { FileUploadModule } from 'ng2-file-upload';
 import { Tab4Page } from './tab4.page';
 import { RouterModule } from '@angular/router';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
@@ -14,6 +14,7 @@ import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
+    FileUploadModule,
     CommonModule,
     FormsModule,
     IonicModule,
