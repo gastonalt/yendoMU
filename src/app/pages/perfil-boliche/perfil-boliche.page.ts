@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Boliche } from 'src/app/models/Boliche';
+import { Evento } from 'src/app/models/Evento';
+import { EventsService } from 'src/app/services/events.service';
 import { cards } from '../../prototypeData';
 
 @Component({
@@ -9,38 +12,41 @@ import { cards } from '../../prototypeData';
 })
 export class PerfilBolichePage implements OnInit {
 
-  cards = cards;
+  cards: Evento[];
 
   cardsFiltradas = [];
 
-  bolicheYendo = this.router.getCurrentNavigation().extras?.state.bolicheYendo;
+  boliche: Boliche = this.router.getCurrentNavigation().extras?.state.boliche;
 
   previusUrl = this.router.getCurrentNavigation().previousNavigation.finalUrl.toString();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private eventService: EventsService) { }
 
   goBack(){
     this.router.navigate(['/perfil-boliche'], {
       replaceUrl: true,
       state: {
-        bolicheYendo: this.bolicheYendo
+        boliche: this.boliche
       }
     });
   }
 
-  navigate(bolicheYendo: any){
+  navigate(boliche: any){
     this.router.navigate(['/evento'], {
       replaceUrl: true,
       state: {
-        bolicheYendo
+        boliche
       }
     });
   }
 
   ngOnInit() {
-    this.cardsFiltradas = cards.filter((card)=>{
-      return card.boliche.nombre === this.bolicheYendo.boliche.nombre
+    this.eventService.getEventosByBoliche(this.boliche.idBoliche).subscribe(value=>{
+      this.cards = value;
     })
+/*     this.cardsFiltradas = cards.filter((card)=>{
+      return card.boliche.nombre === this.bolicheYendo.boliche.nombre
+    }) */
   }
 
 }

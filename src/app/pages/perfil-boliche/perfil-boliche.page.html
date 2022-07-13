@@ -1,24 +1,24 @@
 <ion-content>
 
-    <div [ngStyle]="{'background-image': 'url(' + bolicheYendo.boliche.cover + ')'}" style="background-size: cover; width: 100%; height: 10em; position: relative; display: flex; justify-content: center;">
+    <div [ngStyle]="{'background-image': 'url(' + boliche.coverPic + ')'}" style="background-size: cover; width: 100%; height: 10em; position: relative; display: flex; justify-content: center;">
         <ion-buttons slot="start" style="align-self: flex-start;">
             <ion-back-button text="" defaultHref="f/t/tab1" style="margin: 1em; z-index: 100;"></ion-back-button>
             <app-header-component style="transform:translateX(-1.5em);"></app-header-component>
         </ion-buttons>
         <ion-avatar style="height: 7em;width: 7em;position: absolute; bottom: -3.5em; background-color: white; object-fit: fill; -webkit-box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.2);">
-            <img [src]="bolicheYendo.boliche.picture" style="object-fit: contain;" />
+            <img [src]="boliche.profilePic" style="object-fit: contain;" />
         </ion-avatar>
     </div>
     <section style="margin-top: 4.5em;">
-        <h1 style="padding: 0 1.5em; width: 100%; text-align: center; font-weight: 600;">{{bolicheYendo.boliche.nombre}}</h1>
-        <h3 style="padding: 0 1.5em; width: 100%; text-align: center;">{{bolicheYendo.boliche.direccion}}</h3>
-        <p style="padding: 0 1.5em; width: 100%; text-align: center;">{{bolicheYendo.boliche.descripcion}}</p>
+        <h1 style="padding: 0 1.5em; width: 100%; text-align: center; font-weight: 600;">{{boliche.nombre}}</h1>
+        <h3 style="padding: 0 1.5em; width: 100%; text-align: center;">{{boliche.direccion}}</h3>
+        <p style="padding: 0 1.5em; width: 100%; text-align: center;">{{boliche.descripcion}}</p>
     </section>
     <section>
         <h1 style="padding: 0 1.5em; width: 100%; text-align: center; font-weight: 600;">Eventos</h1>
         <div class="card-list">
-            <div *ngFor="let card of cardsFiltradas" class="app-card">
-                <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+             <div *ngFor="let card of cards" class="app-card">
+                <app-card (click)="navigate(card)" [titulo]="card.titulo" [descripcion]="card.descripcion" [coverImg]="card.coverImg" [ballColor]="'red'"></app-card>
             </div>
         </div>
     </section>

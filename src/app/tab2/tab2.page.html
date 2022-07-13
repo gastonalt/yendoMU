@@ -14,8 +14,8 @@
 
     <ion-searchbar showCancelButton="focus" cancelButtonText="Cancelar" (ionFocus)="buscar = true"(ionCancel)="buscar = false" (ionChange)="buscarHandler($event)" (ionClear)="boliches = cards"></ion-searchbar>
     <ion-list style="width: 95%;" *ngIf="buscar">
-        <ion-item *ngFor="let boliche of boliches">
-            <div (click)="navigate(boliche)">{{boliche.title}}</div>
+        <ion-item *ngFor="let ev of eventos">
+            <div (click)="navigate(ev)">{{ev.titulo}}</div>
         </ion-item>
     </ion-list>
     <section *ngIf="!buscar">

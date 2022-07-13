@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true">
-    <section class="top-section" [ngStyle]="{'background-image': 'url(' + bolicheYendo.backgroundUrl + ')'}">
+    <section class="top-section" [ngStyle]="{'background-image': 'url(' + evento.coverImg + ')'}">
         <div class="parent">
             <div class="div1">
                 <ion-buttons slot="start">
@@ -10,31 +10,28 @@
             <div class="div2">
                 <div class="title">
                     <ion-item lines="none" style="background-color: transparent !important;">
-                        <span class="text">{{bolicheYendo.title}}</span>
-                        <ion-icon class="icon" name="ellipse" [ngStyle]="{'color': bolicheYendo.ballColor }"></ion-icon>
+                        <span class="text">{{evento.titulo}}</span>
+                        <ion-icon class="icon" name="ellipse" [ngStyle]="{'color': 'red' }"></ion-icon>
                     </ion-item>
                 </div>
             </div>
         </div>
     </section>
     <section class="bottom-section">
-        <h2><b>{{bolicheYendo.fecha}}</b> - {{bolicheYendo.time}}:00hs
-            <!-- <ion-icon name="sunny-outline" *ngIf="bolicheYendo.time < 21"></ion-icon>
-            <ion-icon name="moon-outline" *ngIf="bolicheYendo.time >= 21"></ion-icon> -->
+        <h2>{{evento.FechaHora | date:'M/d/yy, h:mm a'}}
         </h2>
-        <ion-item lines="none" (click)="navigateBoliche(bolicheYendo)">
+        <ion-item lines="none" (click)="navigateBoliche(evento.Boliche)">
             <!--Acá iria el (click) que nos lleve a la página del boliche-->
             <ion-avatar slot="start">
-                <img [src]="bolicheYendo.boliche.picture" style="object-fit: contain;" />
+                <img [src]="evento.Boliche.profilePic" style="object-fit: contain;" />
             </ion-avatar>
             <ion-label>
-                <h2>{{bolicheYendo.boliche.nombre}}</h2>
-                <h3>{{bolicheYendo.boliche.direccion}}</h3>
-                <!-- <p>Listen, I've had a pretty messed up day...</p> -->
+                <h2>{{evento.Boliche.nombre}}</h2>
+                <h3>{{evento.Boliche.direccion}}</h3>
             </ion-label>
         </ion-item>
         <h3 class="descripcion">
-            {{bolicheYendo.descripcion}}
+            {{evento.descripcion}}
         </h3>
         <div class="reserva_button">
             <ion-button *ngIf="reservadoView" color="danger" expand="block" (click)="cancelar()">

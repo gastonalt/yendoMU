@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { cards } from '../prototypeData';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { TestServiceService } from '../services/test-service.service';
+import { EventsService } from '../services/events.service';
+import { Evento } from '../models/Evento';
 
 @Component({
   selector: 'app-tab1',
@@ -12,12 +13,13 @@ import { TestServiceService } from '../services/test-service.service';
 })
 export class Tab1Page implements OnInit{
 
-  cards = cards;
+  cards: Evento[];
 
   constructor(public alertController: AlertController,
               private router: Router,
               private storage: Storage,
-              private testService: TestServiceService) {}
+              private testService: TestServiceService,
+              private eventService: EventsService) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -32,18 +34,18 @@ export class Tab1Page implements OnInit{
     const { role } = await alert.onDidDismiss();
   }
 
-  navigate(bolicheYendo: any){
+  navigate(evento: Evento){
     this.router.navigate(['/evento'], {
       replaceUrl: true,
       state: {
-        bolicheYendo
+        evento
       }
     });
   }
 
   ngOnInit(): void {
-    this.testService.getBoliches().subscribe((value)=>{
-      console.log(value);
+    this.eventService.getEventos().subscribe((value: Evento[])=>{
+      this.cards = value;
     });
   };
 

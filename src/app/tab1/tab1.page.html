@@ -11,7 +11,7 @@
     </ion-header>
     <div class="card-list">
         <div *ngFor="let card of cards" class="app-card">
-            <app-card (click)="navigate(card)" [title]="card.title" [descripcion]="card.descripcion" [backgroundUrl]="card.backgroundUrl" [ballColor]="card.ballColor"></app-card>
+            <app-card (click)="navigate(card)" [titulo]="card.titulo" [descripcion]="card.descripcion" [coverImg]="card.coverImg" [ballColor]="'red'"></app-card>
         </div>
     </div>
 
